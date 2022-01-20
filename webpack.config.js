@@ -1,28 +1,37 @@
-'use strict'
-
-let webpack = require('webpack')
-
-let config = {
-  entry: './src/index.js',
+const path = require('path')
+/** @type {import('webpack').Configuration} */
+module.exports = {
+  mode: 'production',
   output: {
-    path: 'lib/',
-    filename: 'index.js'
+    clean: true,
+    libraryTarget: 'umd'
   },
   module: {
-    loaders: [
-      {
-        test: /\.jsx?/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['react']
-        }
-      },
+    rules: [
       {
         test: /\.css$/,
-        loader: 'style-loader!css-loader'
-      }
-    ]
-  }
-}
-
-module.exports = config
+        use: [
+         "style-loader",
+          "css-loader",
+        ],
+      },
+       {
+        test: /\.(jsx|js)$/,
+        include: path.resolve(__dirname, 'src'),
+        exclude: /node_modules/,
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', {
+                "targets": "defaults" 
+              }],
+              '@babel/preset-react'
+            ]
+          }
+        }
+      ]
+    }
+    ],
+  },
+};

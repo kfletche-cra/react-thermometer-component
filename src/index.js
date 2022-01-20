@@ -49,15 +49,15 @@ class Thermometer extends Component {
   }
 
   _createIntervals() {
-    if (this.options.steps) {
-      for (let step = 0; step <= this.options.steps; step++) {
-        let val = ((this.options.max / this.options.steps) * step).toFixed(2)
-        let percent = (val / this.options.max) * 100
-        let interval = { percent: percent, label: val + this.options.format }
-        this.options.intervals.push(interval)
-      }
+  if (this.options.steps) {
+    for (let step = 0; step <= this.options.steps; step++) {
+      const val = parseFloat(((this.options.max / this.options.steps) * step).toFixed(0));
+      const percent = (val / this.options.max) * 100;
+      const interval = { percent, label: val + this.options.format };
+      this.options.intervals.push(interval);
     }
   }
+};
 
   _createIntervalsUI(intervals) {
     return intervals.map((step, i) => {
