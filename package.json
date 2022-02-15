@@ -1,17 +1,20 @@
 {
   "name": "react-thermometer-component-2",
-  "version": "1.0.2",
+  "version": "1.0.7",
   "description": "A React thermometer component",
   "main": "dist/main.js",
   "author": "frederikagger",
   "license": "ISC",
   "dependencies": {
-    "react": "16.0.0",
-    "react-dom": "16.0.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "scripts": {
     "start": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "publish": "npm publish",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "files": [
     "dist"
@@ -20,6 +23,14 @@
     "@babel/core": "^7.16.10",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "@storybook/addon-actions": "^6.4.19",
+    "@storybook/addon-essentials": "^6.4.19",
+    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-links": "^6.4.19",
+    "@storybook/builder-webpack5": "^6.4.19",
+    "@storybook/manager-webpack5": "^6.4.19",
+    "@storybook/react": "^6.4.19",
+    "@storybook/testing-library": "^0.0.9",
     "babel": "6.23.0",
     "babel-cli": "6.23.0",
     "babel-core": "6.23.1",
@@ -36,13 +47,5 @@
     "webpack": "5.66.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.3"
-  },
-  "peerDependencies": {
-    "browserify-css": "~0.15.0"
-  },
-  "browserify": {
-    "transform": [
-      "browserify-css"
-    ]
   }
 }

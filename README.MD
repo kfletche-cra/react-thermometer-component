@@ -3,12 +3,8 @@
 ## Install
 
 ```sh
-$ npm install --save react-thermometer-component
+$ npm i react-thermometer-component
 ```
-
-# View demo
-
-https://zamarrowski.github.io/react-thermometer-component/
 
 ## Usage
 
@@ -30,11 +26,6 @@ render(
 , document.getElementById('container'))
 ```
 
-### Browserify
-
-[`browserify`](https://npmjs.com/packages/browserify) is supported, but you have to install [`browserify-css@^0.12.0`](https://npmjs.com/packages/browserify-css) manually.
-
-
 ## API:
 
 | Param | Type | Description | Example | Default |
@@ -50,4 +41,4 @@ render(
 
 # Contributors
 
-I have made improvements to this component. The original component is http://www.interaminense.com/react-ui-thermomete.
+I have forked and updated this project. The original project is https://github.com/zamarrowski/react-thermometer-component.
